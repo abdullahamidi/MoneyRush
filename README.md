@@ -1,7 +1,5 @@
 # MoneyRush
  
- Bugs:
- 
-  Object pooling not working after reloading scene.
+ Bug: Object pooling not working after reloading scene.
   
-Randomizing object positions will be improved.
+ Randomizing object positions will be improved.
