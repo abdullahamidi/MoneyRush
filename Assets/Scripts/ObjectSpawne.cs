@@ -27,4 +27,9 @@ public class ObjectSpawne : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneWasLoaded;
+    }
 }
