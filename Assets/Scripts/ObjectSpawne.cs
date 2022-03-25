@@ -19,9 +19,9 @@ public class ObjectSpawne : MonoBehaviour
         {
             for (int i = 0; i < pool.size; i++)
             {
-                float spawnPosX = Random.Range(platform.position.x - platform.localScale.x / 2 + 80, platform.position.x + platform.localScale.x / 2 - 40);
+                float spawnPosX = Random.Range(platform.position.x - platform.localScale.x / 2 + 70, platform.position.x + platform.localScale.x / 2 - 40);
                 float spawnPosY = Random.Range(1, 1000);
-                spawnPosY = spawnPosY < 700 ? 1 : 3;
+                spawnPosY = spawnPosY < 700 ? 1 : 4;
                 Vector3 spawnPos = new Vector3(spawnPosX, spawnPosY);
                 objectPooler.SpawnFromPool(pool.tag, spawnPos, Quaternion.identity);
             }

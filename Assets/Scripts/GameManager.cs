@@ -92,8 +92,6 @@ public class GameManager : MonoBehaviour
         if (Input.GetMouseButton(0) && objCollection.TotalMoney > 0 && levelState == LevelState.Play)
         {
             SpawnStairs(stairSpawnTime);
-            score -= objCollection.BanknoteValue;
-            scoreText.text = score.ToString();
         }
 
         //reached
@@ -102,8 +100,9 @@ public class GameManager : MonoBehaviour
 
     private void RiseObject(Transform obj)
     {
-        Vector3 destPos = new Vector3(obj.position.x, obj.position.y + stairs.localScale.y, obj.position.z);
-        obj.position = Vector3.MoveTowards(obj.position, destPos, playerSpeed * Time.deltaTime);
+        Vector3 destPos = new Vector3(obj.position.x, obj.position.y + stairs.localScale.y * 2, obj.position.z);
+        //obj.position = Vector3.Lerp(obj.position, destPos, playerSpeed * Time.deltaTime);
+        obj.position = destPos;
     }
 
     private void SpawnStairs(float spawnTime)
