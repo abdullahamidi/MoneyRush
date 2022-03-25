@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
     public Transform finishStairs;
     public Text scoreText;
     public Text timerText;
-    LevelState levelState = LevelState.Play;
     public float playerSpeed = 5.0f;
+    private LevelState levelState;
     private float distThreshold = 1.0f;
     private float timer = 0f;
     private float stairSpawnTime = 0;
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        levelState = LevelState.Play;
         stairSpawnTime = stairs.localScale.y / (playerSpeed / 2f);
     }
     void Update()
